@@ -189,7 +189,6 @@ const ChargeDetails = () => {
             return;
         }
 
-        // Clear previous data and error message when starting a new search
         setChargingDetails([]);
         setErrorMessage('');
         setLoading(true);
