@@ -27,6 +27,7 @@ const Navbar = () => {
                     <li onClick={() => {
                         window.location.reload()
                         localStorage.removeItem('jwtToken');
+                        localStorage.removeItem('adminUserId');
                         navigate('/login');
                     }} className='my-auto'><Link to="/logout" className="nav-link"><i className="fa-solid fa-lock mx-2"></i>Logout</Link></li>
                 </div>
