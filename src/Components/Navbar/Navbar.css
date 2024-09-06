@@ -1,0 +1,66 @@
+/* Navbar.css */
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    background-color: #282c34;
+    margin: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #61dafb;
+    padding: 8px 16px;
+}
+
+.dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    /* display: none;
+    position: absolute;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1; */
+
+    
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+.dropdown-content li {
+    padding: 8px 12px;
+
+    list-style: unset; /* To show bullet points */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.dropdown-content li:hover {
+    background-color: #ddd; /* Change this color to your preferred background */
+}
+
+
+
+
+
+
+
+ 

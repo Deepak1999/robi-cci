@@ -1,0 +1,56 @@
+.charge-details-table {
+    width: 100%;
+    border-collapse: collapse;
+    /* margin-top: 20px; */
+}
+
+.charge-details-table th,
+.charge-details-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* .charge-details-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+} */
+
+.charge-details-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+.table-container {
+    max-height: 300px !important;
+    overflow-y: auto !important;
+}
+
+.charge-details-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+}
+
+.charge-details-table th,
+.charge-details-table td {
+    padding: 8px !important;
+    text-align: left !important;
+    border: 1px solid #ddd !important;
+}
+
+.charge-details-table th {
+    background-color: #f2f2f2 !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1 !important;
+}
