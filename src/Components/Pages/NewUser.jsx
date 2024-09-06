@@ -9,7 +9,7 @@ const NewUser = () => {
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
 
-    const handleAddUser = async () => {
+    const onHandleAddUser = async () => {
         const jwtToken = localStorage.getItem('jwtToken');
         const adminUserId = localStorage.getItem('adminUserId');
 
@@ -87,7 +87,7 @@ const NewUser = () => {
                     maxLength={40}
                 />
                 <button
-                    onClick={handleAddUser}
+                    onClick={onHandleAddUser}
                     className="submit-button"
                     disabled={loading}
                 >
