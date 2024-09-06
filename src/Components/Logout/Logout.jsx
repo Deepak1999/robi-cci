@@ -47,7 +47,7 @@ export default Logout;
 
 //             try {
 //                 await axios.get(
-//                     'http://192.168.1.88:5535/v1/logout',
+//                     `${Api_base_url}/v1/logout`,
 //                     {
 //                         headers: {
 //                             'adminUserId': adminUserId,

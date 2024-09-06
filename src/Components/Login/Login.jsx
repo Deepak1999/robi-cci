@@ -136,6 +136,7 @@ import logoLogin from '../Image/loginLogo.png'
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Api_base_url from '../Api_base_url/BaseUrl';
 
 const Login = ({ onLogin }) => {
     const [username, setUsername] = useState('');
@@ -149,7 +150,7 @@ const Login = ({ onLogin }) => {
         setLoading(true);
 
         try {
-            const response = await axios.post('http://192.168.1.88:5535/v1/login', {
+            const response = await axios.post(`${Api_base_url}/v1/login`, {
                 userName: username,
                 password: password
             });

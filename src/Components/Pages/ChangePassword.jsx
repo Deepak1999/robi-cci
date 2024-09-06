@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import Api_base_url from '../Api_base_url/BaseUrl';
 
 const ChangePassword = () => {
 
@@ -24,7 +25,7 @@ const ChangePassword = () => {
 
         try {
             const response = await axios.post(
-                'http://192.168.1.88:5535/change/password',
+                `${Api_base_url}/change/password`,
                 {
                     newPassword: `${inputValue}`,
                 },

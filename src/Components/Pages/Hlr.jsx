@@ -3,6 +3,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { ThreeDots } from 'react-loader-spinner';
 import '../CssPages/Robi.css';
+import Api_base_url from '../Api_base_url/BaseUrl';
 
 const Hlr = () => {
   const [inputValue, setInputValue] = useState('');
@@ -36,7 +37,7 @@ const Hlr = () => {
 
     try {
       const response = await axios.post(
-        'http://192.168.1.88:5535/v1/status/check',
+        `${Api_base_url}/v1/status/check`,
         {
           number: `${inputValue}`,
           type: 'hlr',

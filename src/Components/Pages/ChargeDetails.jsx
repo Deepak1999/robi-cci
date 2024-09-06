@@ -151,6 +151,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { ThreeDots } from 'react-loader-spinner';
 import '../CssPages/ChargeDetails.css';
+import Api_base_url from '../Api_base_url/BaseUrl';
 
 const ChargeDetails = () => {
     const [inputValue, setInputValue] = useState('');
@@ -195,7 +196,7 @@ const ChargeDetails = () => {
 
         try {
             const response = await axios.post(
-                'http://192.168.1.88:5535/charging/details',
+                `${Api_base_url}/charging/details`,
                 { number: `${inputValue}` },
                 { headers: { jwtToken, adminUserId } }
             );
