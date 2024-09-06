@@ -20,10 +20,10 @@ const Navbar = () => {
                             <li><Link to="/subscription-details/robi" className="nav-link" style={{ color: "black" }}>VMS</Link></li>
                             <li><Link to="/subscription-details/hlr" className="nav-link" style={{ color: "black" }}>HLR</Link></li>
                         </ul>
-
                     </li>
                     <li className='my-auto'><Link to="/charge-details" className="nav-link"><i className="fa-solid fa-circle-info mx-2"></i>Charging Details</Link></li>
                     <li className='my-auto'><Link to="/change-password" className="nav-link"><i className="fa-solid fa-key mx-2"></i>Change Password</Link></li>
+                    <li className='my-auto'><Link to="/add-user" className="nav-link"><i className="fa-solid fa-user-plus mx-2"></i>Add User</Link></li> {/* New Link Added */}
                     <li onClick={() => {
                         window.location.reload()
                         localStorage.removeItem('jwtToken');

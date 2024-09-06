@@ -58,21 +58,31 @@ const ChangePassword = () => {
                 <span className="input-prefix">Update Your Password</span>
             </div> */}
             <div className="robi-page" style={{ marginTop: '10%' }}>
-                <div className="input-container">
-                    {/* <span className="input-prefix">880</span> */}
-                    <input
-                        type="password"
-                        inputMode="numeric"
-                        pattern="[0-9]*"
-                        placeholder="Enter you new password"
-                        value={inputValue}
-                        onChange={(e) => setInputValue(e.target.value)}
-                        className="input-box number-input"
-                    />
+            <p><strong>Change Password</strong></p>
+                <div className='d-flex'>
+                    <div className="input-container">
+                        {/* <span className="input-prefix">880</span> */}
+                       
+                        <div>
+                            <input
+                                type="password"
+                                inputMode="numeric"
+                                pattern="[0-9]*"
+                                placeholder="Enter you new password"
+                                value={inputValue}
+                                onChange={(e) => setInputValue(e.target.value)}
+                                className="input-box number-input"
+                            />
+                        </div>
+
+                    </div>
+                    <div>
+                        <button onClick={onChangePassword} className="search-button" style={{marginTop: "4px", marginLeft: "22px"}}>
+                            {/* Update Password */}
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+                    </div>
                 </div>
-                <button onClick={onChangePassword} className="search-button">
-                    Update Password
-                </button>
             </div>
         </>
     );

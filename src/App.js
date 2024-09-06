@@ -8,6 +8,7 @@ import Robi from './Components/Pages/Robi';
 import Hlr from './Components/Pages/Hlr';
 import Login from './Components/Login/Login';
 import Navbar from './Components/Navbar/Navbar';
+import NewUser from './Components/Pages/NewUser';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -27,10 +28,8 @@ function App() {
     window.location.href = '/login';
   };
 
-  return (<>
-    {/* <HashRouter> */}
-    {/* <Router > */}
-      <HashRouter> 
+  return (
+    <HashRouter>
       {isAuthenticated ? <Navbar /> : null}
       <Routes>
         <Route path="/login" element={!isAuthenticated ? <Login onLogin={handleLogin} /> : <Navigate to="/" />} />
@@ -40,16 +39,16 @@ function App() {
         <Route path="/subscription-details/hlr" element={isAuthenticated ? <Hlr /> : <Navigate to="/login" />} />
         <Route path="/charge-details" element={isAuthenticated ? <ChargeDetails /> : <Navigate to="/login" />} />
         <Route path="/change-password" element={isAuthenticated ? <ChangePassword /> : <Navigate to="/login" />} />
-        {/* <Route path="/logout" element={<button onClick={handleLogout}>Logout</button>} /> */}
+        <Route path="/add-user" element={isAuthenticated ? <NewUser /> : <Navigate to="/login" />} />
         <Route path="*" element={isAuthenticated ? <Navigate to="/" /> : <Navigate to="/login" />} />
       </Routes>
-      </HashRouter> 
-    {/* </Router> */}
-    {/* </HashRouter> */}
-  </>);
+    </HashRouter>
+  );
 }
 
 export default App;
+
+
 
 
 // import React, { useState, useEffect } from 'react';

@@ -158,7 +158,7 @@ const ChargeDetails = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 5;
+    const itemsPerPage = 3;
 
     const maskNumber = (number) => {
         if (number.length < 10) {
@@ -325,23 +325,30 @@ const ChargeDetails = () => {
             </div>
 
             {!loading && chargingDetails.length > 0 && (
-                <div className="pagination-controls">
-                    <button
+                <div className="pagination-controls mt-4" >
+                    <button style={{
+                        backgroundColor: "#2191d0", color: "white", border: "1px solid #2191d0", width: "100px",
+                        padding: "8px",
+                        borderRadius: "5px"
+                    }}
                         onClick={handlePrevPage}
                         disabled={currentPage === 1}
-                        className="pagination-button"
+                        className="pagination-button me-4"
                     >
-                        Previous
+                        <b>Previous</b>
                     </button>
                     <span className="page-info">
                         Page {currentPage} of {totalPages}
                     </span>
                     <button
+                        style={{ backgroundColor: "#2191d0", color: "white", border: "1px solid #2191d0", width: "100px",
+                            padding: "8px",
+                            borderRadius: "5px" }}
                         onClick={handleNextPage}
                         disabled={currentPage === totalPages}
-                        className="pagination-button"
+                        className="pagination-button ms-4"
                     >
-                        Next
+                        <b>Next</b>
                     </button>
                 </div>
             )}
