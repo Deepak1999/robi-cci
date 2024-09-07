@@ -59,11 +59,11 @@ const ChangePassword = () => {
                 <span className="input-prefix">Update Your Password</span>
             </div> */}
             <div className="robi-page" style={{ marginTop: '10%' }}>
-            <p><strong>Change Password</strong></p>
+                <p><strong>Change Password</strong></p>
                 <div className='d-flex'>
                     <div className="input-container">
                         {/* <span className="input-prefix">880</span> */}
-                       
+
                         <div>
                             <input
                                 type="password"
@@ -78,7 +78,7 @@ const ChangePassword = () => {
 
                     </div>
                     <div>
-                        <button onClick={onChangePassword} className="search-button" style={{marginTop: "4px", marginLeft: "22px"}}>
+                        <button onClick={onChangePassword} className="search-button" style={{ marginTop: "4px", marginLeft: "22px" }}>
                             {/* Update Password */}
                             <i class="fa-solid fa-pen-to-square"></i>
                         </button>

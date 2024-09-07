@@ -250,7 +250,6 @@ const ChargeDetails = () => {
         XLSX.writeFile(workbook, 'ChargeDetails.xlsx');
     };
 
-
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = chargingDetails.slice(indexOfFirstItem, indexOfLastItem);
