@@ -308,6 +308,7 @@ const ChargeDetails = () => {
                                 </tr>
                             </thead>
                             <tbody>
+
                                 {currentItems.map((detail, index) => (
                                     <tr key={index}>
                                         <td>{detail.aParty}</td>
@@ -319,6 +320,7 @@ const ChargeDetails = () => {
                                         <td>{detail.consent}</td>
                                     </tr>
                                 ))}
+                                
                             </tbody>
                         </table>
                     </div>
