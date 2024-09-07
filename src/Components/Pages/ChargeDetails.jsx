@@ -150,6 +150,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { ThreeDots } from 'react-loader-spinner';
+import * as XLSX from 'xlsx';
 import '../CssPages/ChargeDetails.css';
 import Api_base_url from '../Api_base_url/BaseUrl';
 
@@ -230,6 +231,26 @@ const ChargeDetails = () => {
         }
     };
 
+    const exportToExcel = () => {
+        const worksheetData = chargingDetails.map((detail) => ({
+            'A Party Number': detail.aParty,
+            'B Party Number': maskNumber(detail.bParty),
+            'Charged Amount': detail.chargedAmount,
+            'Date & Time': detail.dateTime,
+            'Messages': detail.messages,
+            'Operator': detail.operator,
+            'Consent': detail.consent,
+        }));
+
+        const workbook = XLSX.utils.book_new();
+        const worksheet = XLSX.utils.json_to_sheet(worksheetData);
+
+        XLSX.utils.book_append_sheet(workbook, worksheet, 'ChargeDetails');
+
+        XLSX.writeFile(workbook, 'ChargeDetails.xlsx');
+    };
+
+
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = chargingDetails.slice(indexOfFirstItem, indexOfLastItem);
@@ -308,7 +329,6 @@ const ChargeDetails = () => {
                                 </tr>
                             </thead>
                             <tbody>
-
                                 {currentItems.map((detail, index) => (
                                     <tr key={index}>
                                         <td>{detail.aParty}</td>
@@ -320,7 +340,6 @@ const ChargeDetails = () => {
                                         <td>{detail.consent}</td>
                                     </tr>
                                 ))}
-                                
                             </tbody>
                         </table>
                     </div>
@@ -328,12 +347,16 @@ const ChargeDetails = () => {
             </div>
 
             {!loading && chargingDetails.length > 0 && (
-                <div className="pagination-controls mt-4" >
-                    <button style={{
-                        backgroundColor: "#2191d0", color: "white", border: "1px solid #2191d0", width: "100px",
-                        padding: "8px",
-                        borderRadius: "5px"
-                    }}
+                <div className="pagination-controls mt-4">
+                    <button
+                        style={{
+                            backgroundColor: "#2191d0",
+                            color: "white",
+                            border: "1px solid #2191d0",
+                            width: "100px",
+                            padding: "8px",
+                            borderRadius: "5px"
+                        }}
                         onClick={handlePrevPage}
                         disabled={currentPage === 1}
                         className="pagination-button me-4"
@@ -344,9 +367,14 @@ const ChargeDetails = () => {
                         Page {currentPage} of {totalPages}
                     </span>
                     <button
-                        style={{ backgroundColor: "#2191d0", color: "white", border: "1px solid #2191d0", width: "100px",
+                        style={{
+                            backgroundColor: "#2191d0",
+                            color: "white",
+                            border: "1px solid #2191d0",
+                            width: "100px",
                             padding: "8px",
-                            borderRadius: "5px" }}
+                            borderRadius: "5px"
+                        }}
                         onClick={handleNextPage}
                         disabled={currentPage === totalPages}
                         className="pagination-button ms-4"
@@ -355,10 +383,24 @@ const ChargeDetails = () => {
                     </button>
                 </div>
             )}
+
+            {!loading && chargingDetails.length > 0 && (
+                <div className="download-section mt-3">
+                    <button
+                        className="btn btn-success"
+                        onClick={exportToExcel}
+                        style={{ padding: '10px 20px', borderRadius: '5px' }}
+                    >
+                        Download Excel
+                    </button>
+                </div>
+            )}
+
         </div>
     );
 };
 
 export default ChargeDetails;
+
 
 
