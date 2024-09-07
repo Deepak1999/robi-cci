@@ -313,8 +313,20 @@ const ChargeDetails = () => {
             )}
 
             <div className="table-section" style={{ marginTop: '15%', width: '1050px' }}>
+                {!loading && chargingDetails.length > 0 && (
+                    <div className="download-section mt-3" style={{ textAlign: "right" }}>
+                        <button
+                            className="btn btn-success"
+                            onClick={exportToExcel}
+                            style={{ padding: '10px 20px', borderRadius: '5px' }}
+                        >
+                            {/* Download Excel */}
+                            <i className="fa-solid fa-download"></i>
+                        </button>
+                    </div>
+                )}
                 {!loading && currentItems.length > 0 && (
-                    <div className="table-container">
+                    <div className="table-container mt-3">
                         <table className="charge-details-table">
                             <thead>
                                 <tr>
@@ -382,19 +394,6 @@ const ChargeDetails = () => {
                     </button>
                 </div>
             )}
-
-            {!loading && chargingDetails.length > 0 && (
-                <div className="download-section mt-3">
-                    <button
-                        className="btn btn-success"
-                        onClick={exportToExcel}
-                        style={{ padding: '10px 20px', borderRadius: '5px' }}
-                    >
-                        Download Excel
-                    </button>
-                </div>
-            )}
-
         </div>
     );
 };
