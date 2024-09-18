@@ -13,7 +13,6 @@ const Robi = () => {
     const jwtToken = localStorage.getItem('jwtToken');
     const adminUserId = localStorage.getItem('adminUserId');
 
-    // Check if the input value is empty
     if (!inputValue) {
       Swal.fire({
         icon: 'warning',
@@ -23,7 +22,6 @@ const Robi = () => {
       return;
     }
 
-    // Check if the input length is less than 10 digits
     if (inputValue.length < 10) {
       Swal.fire({
         icon: 'warning',
