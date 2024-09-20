@@ -55,7 +55,7 @@ const ChangePassword = () => {
                 <p><strong>Change Password</strong></p>
                 <div className='d-flex'>
                     <div className="input-container">
-                        
+
                         <div>
                             <input
                                 type="password"
