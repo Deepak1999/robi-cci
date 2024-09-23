@@ -37,7 +37,7 @@ const ChangePassword = () => {
             Swal.fire({
                 icon: 'success',
                 title: 'Success',
-                text: response.data.statusDescription.statusMessage,
+                // text: response.data.statusDescription.statusMessage,
             });
         } catch (error) {
             console.error('Error during status check:', error);
