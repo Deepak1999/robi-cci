@@ -26,8 +26,7 @@ pipeline {
                     // sh 'sudo mv -v  /var/www/html/robicci  /var/www/html/robicci_$(date +%Y%m%d%H)/'
                     sh 'sudo mv build /var/www/html/'
                     sh 'sudo mv /var/www/html/build  /var/www/html/robicci'
-                    // sh 'sudo service nginx stop'
-                    // sh 'sudo service nginx start'
+                    sh 'sudo service restart stop'
                    }
             }
         }
