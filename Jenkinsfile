@@ -21,14 +21,17 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                script{
-                    sh'ls -lrth'
-                    sh 'sudo mv -v  /var/www/html/robicci  /var/www/html/robicci_$(date +%Y%m%d%H)/'
+                script {
+                    sh 'ls -lrth /var/www/html'
+                    sh 'sudo mv -v /var/www/html/robicci /var/www/html/robicci_$(date +%Y%m%d%H)'
+                    sh 'sudo rm -rf /var/www/html/robicci/.* /var/www/html/robicci/*'
                     sh 'sudo mv build /var/www/html/'
-                    sh 'sudo mv /var/www/html/build  /var/www/html/robicci'
-                    sh 'sudo service restart stop'
-                   }
+                    sh 'sudo mv /var/www/html/build /var/www/html/robicci'
+                    sh 'sudo service nginx restart'
+                } 
             }
         }
     }
 }
+
+
