@@ -69,7 +69,7 @@ const Login = ({ onLogin }) => {
                     <div className="login-logo">
                         <img src={logoLogin} className="img-fluid" style={{ width: "100px", marginLeft: "41%" }} alt="Logo" />
                     </div>
-                    <h2 className="login-title" style={{ marginLeft: "41%" }}>Login</h2>
+                    <h2 className="login-title" style={{ marginLeft: "41%" }}>Loginjyhfkykyfy</h2>
                     <form className="login-form-content" onSubmit={handleSubmit}>
                         <div className="form-group mb-4 mt-3">
                             <label htmlFor="username" className="form-label"><strong>Username</strong></label>
