@@ -25,11 +25,17 @@ pipeline {
                     // List contents of the /var/www/html directory for debugging
                     sh 'ls -lrth /var/www/html'
 
-                    // Move existing robicci folder to backup with timestamp
-                    sh 'sudo mv -v /var/www/html/robicci /var/www/html/robicci_$(date +%Y%m%d%H)'
+                    // Check if the robicci folder exists before trying to move it
+                    sh '''
+                        if [ -d /var/www/html/robicci ]; then
+                            sudo mv -v /var/www/html/robicci /var/www/html/robicci_$(date +%Y%m%d%H)
+                        else
+                            echo "Directory /var/www/html/robicci does not exist, skipping move."
+                        fi
+                    '''
 
-                    // Ensure the robicci directory is cleaned up properly
-                    sh 'sudo rm -rf /var/www/html/robicci/.* /var/www/html/robicci/*'
+                    // Ensure robicci directory is cleaned up
+                    sh 'sudo rm -rf /var/www/html/robicci/.* /var/www/html/robicci/* || true'
 
                     // Remove the existing build folder if it exists
                     sh 'sudo rm -rf /var/www/html/build'
