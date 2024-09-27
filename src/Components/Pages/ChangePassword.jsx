@@ -67,7 +67,6 @@ const ChangePassword = () => {
                                 className="input-box number-input"
                             />
                         </div>
-
                     </div>
                     <div>
                         <button onClick={onChangePassword} className="search-button" style={{ marginTop: "4px", marginLeft: "22px" }}>
