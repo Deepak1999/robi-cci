@@ -118,7 +118,7 @@ const Login = ({ onLogin }) => {
                                     <div className="loader"></div>
                                 </div>
                             ) : (
-                                'Login2'
+                                'Login'
                             )}
                         </button>
                     </form>
