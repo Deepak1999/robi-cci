@@ -23,9 +23,9 @@ pipeline {
             steps {
                 script{
                     sh'ls -lrth'
-                    // sh 'mv -v /opt/html/themanly /opt/html/themanly_$(date +%Y%m%d%H)/'
-                    sh 'mv build /var/www/html/robicci'
-                    // sh 'mv /opt/html/dist /opt/html/themanly'
+                    sh 'mv -v  /var/www/html/robicci  /var/www/html/robicci_$(date +%Y%m%d%H)/'
+                    sh 'mv build /var/www/html/'
+                    sh 'mv /var/www/html/build  /var/www/html/robicci'
                 }
             }
         }
