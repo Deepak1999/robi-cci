@@ -14,13 +14,13 @@
     "react-loader-spinner": "^6.1.6",
     "react-router-dom": "^6.26.1",
     "react-scripts": "5.0.1",
-    "sweetalert2": "^11.13.2",
+    "sweetalert2": "^11.14.2",
     "web-vitals": "^2.1.4",
     "xlsx": "^0.18.5"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "CI=false react-scripts build 2> /dev/null",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
