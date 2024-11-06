@@ -38,8 +38,8 @@ function App() {
         <Route path="/subscription-details/robi" element={isAuthenticated ? <Robi /> : <Navigate to="/login" />} />
         <Route path="/subscription-details/hlr" element={isAuthenticated ? <Hlr /> : <Navigate to="/login" />} />
         <Route path="/charge-details" element={isAuthenticated ? <ChargeDetails /> : <Navigate to="/login" />} />
-        <Route path="/change-password" element={isAuthenticated ? <ChangePassword /> : <Navigate to="/login" />} />
-        <Route path="/add-user" element={isAuthenticated ? <NewUser /> : <Navigate to="/login" />} />
+        {/* <Route path="/change-password" element={isAuthenticated ? <ChangePassword /> : <Navigate to="/login" />} />
+        <Route path="/add-user" element={isAuthenticated ? <NewUser /> : <Navigate to="/login" />} /> */}
         <Route path="*" element={isAuthenticated ? <Navigate to="/" /> : <Navigate to="/login" />} />
       </Routes>
     </HashRouter>
