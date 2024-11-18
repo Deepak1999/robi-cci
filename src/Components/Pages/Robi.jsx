@@ -50,7 +50,9 @@ const Robi = () => {
 
       Swal.fire({
         icon: 'success',
+        // title: 'Success',
         title: 'Success',
+        title: response.data.statusDescription.statusMessage,
         text: response.data.vmsStatus.status,
       });
     } catch (error) {

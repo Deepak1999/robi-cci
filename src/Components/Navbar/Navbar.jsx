@@ -12,7 +12,7 @@ const Navbar = () => {
                 <div className='navbar-logo'>
                     <img src={logo} alt='logo-img ' className='img-fluid' style={{ width: "55px" }}></img>
                 </div>
-                <div className='lists d-flex' style={{ marginLeft: "15%" }}>
+                <div className='lists d-flex' style={{ marginLeft: "48%" }}>
                     <li className='my-auto'><Link to="/" className="nav-link"><i className="fa-solid fa-house mx-2"></i>Home</Link></li>
                     <li className="dropdown my-auto" style={{ color: "#61dafb", padding: "8px 16px" }}>
                         <i className="fa-solid fa-list mx-2"></i> Subscription Details

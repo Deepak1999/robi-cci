@@ -50,8 +50,10 @@ const Hlr = () => {
 
       Swal.fire({
         icon: 'success',
-        title: 'Success',
+        // title: 'Success',
+        title: response.data.statusDescription.statusMessage,
         text: response.data.vmsStatus.status,
+        // text: response.data.statusMessage,
       });
     } catch (error) {
       console.error('Error during status check:', error);
